@@ -1,9 +1,6 @@
 version: 2.1
 
-workflows:
-  test-env-vars:
-    jobs:
-      - build
+
 
 jobs:
   build:
@@ -15,3 +12,8 @@ jobs:
           name: "echo an env var that is part of our project"
           command: |
             echo $my_env
+            
+workflows:
+  test-env-vars:
+    jobs:
+      - save_hello_world_output
